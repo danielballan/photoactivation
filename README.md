@@ -17,7 +17,7 @@ from Google Drive or S3.
 
 ## Browse the notebooks
 
-Review static (not runnable) copies of the notebooks [here](http://nbviewer.ipython.org/github/danielballan/photoactivation/blob/master).
+Review static (not runnable) copies of the notebooks [here](http://nbviewer.ipython.org/github/danielballan/photoactivation/tree/master).
 
 ## Installation
 
