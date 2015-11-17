@@ -130,12 +130,12 @@ def fit_profile(profile, guess):
     return result
 
 
-def fit_profile_tails(profile, guess, width, center=None):
+def fit_profile_tails(profile, guess, halfwidth, center=None):
     if center is None:
         center = len(profile) // 2
     
     profile_tails = profile.copy()
-    profile_tails[center - width: center + width] = np.nan    
+    profile_tails[center - halfwidth: center + halfwidth] = np.nan
     return fit_profile(profile_tails, guess)
 
 
@@ -147,14 +147,20 @@ def extrapolate_fit(tails_result, x):
 ## Plots ##
 
 
-def plot_tail_fit(profile, tails_result):
+def plot_tail_fit(profile, tails_result, halfwidth, center=None):
+    if center is None:
+        center = len(profile) // 2
+
     fig, ax = plt.subplots()
     x = np.arange(len(profile))
-    profile_tails = tails_result.best_fit + tails_result.residual  # for user convenience
+    x1, x2 = (np.arange(center - halfwidth),
+              np.arange(center + halfwidth, len(profile)))
+    profile_tails = tails_result.data
     full_gaussian = tails_result.eval(x=x)  # extrapolating through center
-    ax.plot(x, full_gaussian, color='red')
     ax.plot(x, profile, color='gray')
-    ax.plot(x, profile_tails, color='black')
+    ax.plot(x1, profile_tails[:center - halfwidth], color='black')
+    ax.plot(x2, profile_tails[center - halfwidth:], color='black')
+    ax.plot(x, full_gaussian, color='red')
     
 
 def outline_activation_region(img):
