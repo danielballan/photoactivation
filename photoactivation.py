@@ -26,7 +26,9 @@ def make_profiler(background, axis):
     """
     @lru_cache(maxsize=1001)
     def func(img_stack, i):
-        return np.asarray(np.sum(img_stack[i], axis)).astype(np.float64) - background
+        # Sum and convert to float64, which is safe in subtraction.
+        raw_profile = np.asarray(np.sum(img_stack[i], axis)).astype(np.float64)
+        return np.clip(raw_profile - background, 0, None)
     return func
 
 
