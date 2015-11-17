@@ -22,7 +22,11 @@ from Google Drive or S3.
 2. Install [conda](https://www.continuum.io/downloads).
 3. Open a terminal (command prompt) and use `cd` to change to the directory where these files are downloaded.
 4. Install the required Python packages into a new "environment".
-conda-env create environment.yml
+
+    ```
+    conda-env create environment.yml
+    ```
+
 5. Activate the new environment. On Windows:
 
     ```
