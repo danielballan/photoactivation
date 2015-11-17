@@ -15,6 +15,10 @@ repository includes:
 It does not contain the large data files. These should be downloaded separately
 from Google Drive or S3.
 
+## Browse the notebooks
+
+Review static (not runnable) copies of the notebooks [here](http://nbviewer.ipython.org/github/danielballan/photoactivation/blob/master).
+
 ## Installation
 
 1. Download the data files and put them in the `data/` directory (no
