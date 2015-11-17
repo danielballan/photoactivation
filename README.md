@@ -1,5 +1,4 @@
-Photoactivation Paper
----------------------
+# Photoactivation Paper
 
 This is a repository of analysis code for a paper in preparation. The
 repository includes:
