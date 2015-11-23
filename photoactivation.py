@@ -1,6 +1,6 @@
 from lmfit.models import ConstantModel, GaussianModel
 from functools import lru_cache
-from lmfit.model import Model
+from lmfit.model import Model, Parameter
 from numpy import convolve, exp
 import numpy as np
 import matplotlib as mpl
@@ -78,7 +78,8 @@ def fit_line(x, y):
     return fit
 
 
-def fit_profiles_recursively(profiles, lag, *, recursive=True, bound=False):
+def fit_profiles_recursively(profiles, lag, *, recursive=True, bound=False,
+                             reverse=False):
     """
     Parameters
     ----------
@@ -92,6 +93,10 @@ def fit_profiles_recursively(profiles, lag, *, recursive=True, bound=False):
     bound : bool, optional
         If True, apply min/max bounds to the fit.
         False by default.
+    reverse : bool, option
+        If True, start at the end of the video and work backward.
+        This affects the seeding of the fits (initial guesses are
+        passed backward instead of forward).
         
     Returns
     -------
@@ -102,7 +107,10 @@ def fit_profiles_recursively(profiles, lag, *, recursive=True, bound=False):
                for profile in profiles[:-lag]]
 
     results = []
-    for kernel, profile in zip(kernels, profiles[lag:]):
+    pairs = list(zip(kernels, profiles[lag:]))
+    if reverse:
+        pairs.reverse()
+    for kernel, profile in pairs:
         cg_model = ConvolvedGaussianModel(kernel)
 
         # If this is not our first iteration, use the best fit from the last
@@ -117,7 +125,11 @@ def fit_profiles_recursively(profiles, lag, *, recursive=True, bound=False):
                 else:
                     cg_model.set_param_hint(name, value=p.value)
 
-        results.append(cg_model.fit(profile))
+        scaling = np.sum(profile)/np.sum(kernel)
+        result = cg_model.fit(profile, height=Parameter('height', value=scaling))
+        results.append(result)
+    if reverse:
+        results.reverse()
     return results
 
 
