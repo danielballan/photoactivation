@@ -9,6 +9,8 @@ Water is reasonably robust for different details of the analysis procedure.
 * We tried fixing the height of the Gaussian in the model based on the change in intensity. This was actually wrong, but the diffusivities came out *better*.
 * Then we fixed the *amplitude* of the Gaussian, which is correct, and diffusivities only got slightly worse.
 * We tried going through the mappings in reverse order -- still mapping "forward" but starting from the last interval in the video and working backward. This has a negligible but nonzero affect on the sigma.
+
+The water figure looks good.
    
 ### Fibrin
 
@@ -17,6 +19,12 @@ Fibrin analysis varies from water analysis in some ways that still should be bet
 * Subtraction of "stuck map" must be done as int to correspond to my old results (which are better). No idea why floats don't give the same result in this case.
 * Before mapping, all must be shifted by a constant so that their min = 0. Empirically, the results are worse if I don't do this.
 * Using a bound on the fit (`bound=True`) improves the result in this case. It does not improve the result for water.
+
+What will the figure look like?
+
+* Include the Gaussian mobile/immobile plot. Change the color from red -- red is the activation region color.
+* Show individual MDS or two ensemble MSDs. We have three Fibrin MSD results, made on different samples by different people. Expected D~1.5 from MPT (mobile fraction). As of this writing, the D from PANDA (mobile fraction) is about 1.0 +/- 0.05.
+* In the four windows of profiles, definitely show the unsubtracted. Maybe also show subtracted.
 
 ### CFS
 
@@ -28,10 +36,20 @@ Without amplitude fixed, the nonlinear fitting finds a way to produce a good fit
 * Surrender and just map the first frame to the last (if indeed that mappings looks good) and extract a single number for D.
 * Mask out the shaded areas (as NaN) and compute a profile *average* (not sum).
 * Look at other videos.
-    
-### Misc
 
-Other good things to do:
-* Compare three Fibrin MSDs, made on different samples by different people. Expected D~1.5 from MPT (mobile fraction). As of this writing, the D from PANDA (mobile fraction) is about 1.0 +/- 0.05.
-* Add inset with MDSs from fibrin to Figure 3.
-* Look carefully at the two water videos and the fibrin video with the interactive mapper. Make sure the mappings are good and the Gaussians are physically reasonable.
+What will Figure 5 look like? Some ideas, pending more analysis:
+* just like Figure 3
+* include sigma from multiple different samples/patients on one or multiple plots
+* a histogram of D from particle tracking?
+* a histogram of D from simplified (single-mapping) PANDA?
+
+### Supplemental Material
+
+* a couple real mappings, as in the interactive mapping explorer
+* the mottled view of fibrin
+* a rainbow plot, or multiple
+* galleries and, if possible, videos
+* the table of particles sizes and zeta potential measured by DLS
+* a figure showing MSD from MPT experiments of PS-PEG and PS-COOH
+* linearity of fluorescence vs. concentration
+* simulation video, if we use it in the end
