@@ -1,3 +1,4 @@
 "20140513 JCK20140506 10fold in H2O 160nm PLGA-PEG-Rhod Activation_20x 1.57sec 10 iterations 7 gain offset _4AU.tif"
 "20140519 JCK20140506 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 7.lsm"
 "20140520 JCK20140519 10fold in fibrin 4mg_mL PLGA-PEG-Rhod Activation_20x 3.93sec 10 iterations 4 AU 4.lsm"
+"20140521 CFS-20140520-4 JCK20140519 PGLA-PEG 10fold 63x 1.57s 10iters maxAU 6.lsm"
