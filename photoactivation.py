@@ -1,6 +1,7 @@
 from lmfit.models import ConstantModel, GaussianModel
 from functools import lru_cache
 from lmfit.model import Model, Parameter
+from lmfit.lineshapes import gaussian
 from numpy import convolve, exp
 import numpy as np
 import matplotlib as mpl
@@ -40,16 +41,16 @@ class ConvolvedGaussianModel(Model):
         self.kernel = kernel
         self.margin = margin
         
-        def func(x, height, sigma, center, base):
+        def func(x, amplitude, sigma, center, base):
             # Note: This uses kernel, defined just above.
-            gaussian = base + height * exp(-(x-center)**2/(2*sigma**2))
-            result = convolve(gaussian, self.kernel, 'same')
+            g = gaussian(x, amplitude, center, sigma)
+            result = convolve(g, self.kernel, 'same')
             return result[self.margin:-self.margin]
         
         super(ConvolvedGaussianModel, self).__init__(func, **kwargs)
         
     def guess_starting_values(self, profile):
-        self.set_param_hint('height', value=1, min=0)
+        self.set_param_hint('amplitude', value=1, min=0)
         self.set_param_hint('sigma' , value=len(profile) / 2 - np.argmax(profile - profile.min() > profile.ptp() / 2),
                             min=0)
         self.set_param_hint('center', value=len(profile) / 2, min=0, max=len(profile))
@@ -126,7 +127,7 @@ def fit_profiles_recursively(profiles, lag, *, recursive=True, bound=False,
                     cg_model.set_param_hint(name, value=p.value)
 
         scaling = np.sum(profile)/np.sum(kernel)
-        result = cg_model.fit(profile, height=Parameter('height', value=scaling))
+        result = cg_model.fit(profile, amplitude=Parameter('amplitude', value=scaling))
         results.append(result)
     if reverse:
         results.reverse()
