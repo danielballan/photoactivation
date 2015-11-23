@@ -196,7 +196,7 @@ def subtract_safely(a, b):
     >>> subtract_safely(b, a)
     array([0], dtype=uint16)
     """
-    return np.clip(a.astype('int16') - b, 0, None).astype('uint16')
+    return np.clip(a.astype('float64') - b, 0, None)
 
 
 def line_as_image(line, width):
