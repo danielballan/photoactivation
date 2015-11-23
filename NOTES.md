@@ -1,0 +1,36 @@
+# Notes
+
+## 2015-11-23 at Penn
+
+### Water
+
+Water is reasonably robust for different details of the analysis procedure. 
+    * We tried fixing the height of the Gaussian in the model based on the change in intensity. This was actually wrong, but the diffusivities came out *better*.
+    * Then we fixed the *amplitude* of the Gaussian, which is correct, and diffusivities only got slightly worse.
+    * We tried going through the mappings in reverse order -- still mapping "forward" but starting from the last interval in the video and working backward. This has a negligible but nonzero affect on the sigma.
+   
+### Fibrin
+
+Fibrin analysis varies from water analysis in some ways that still should be better understood.
+    * Subtraction of the "stuck map" must be done pixelwise because the subtraction is nonlienar due to clipping at zero.
+    * Subtraction of "stuck map" must be done as int to correspond to my old results (which are better). No idea why floats don't give the same result in this case.
+    * Before mapping, all must be shifted by a constant so that their min = 0. Empirically, the results are worse if I don't do this.
+    * Using a bound on the fit (`bound=True`) improves the result in this case. It does not improve the result for water.
+
+### CFS
+
+CFS is difficult. The following things had only a small effect on the sigma. Unlike the other samples, the CFS video has a consistent pathology not affected by 
+    * trying reverse order (as with water)
+    * fixing height (mistakenly) and then amplitude (correctly) as with water
+
+Without amplitude fixed, the nonlinear fitting finds a way to produce a good fit, but it results to an unphysically small amplitude and a negative baseline to achieve it. With the amplitude fixed, the mappings for late frames are very poor, as is visually obvious. Ideas:
+    * Surrender and just map the first frame to the last (if indeed that mappings looks good) and extract a single number for D.
+    * Mask out the shaded areas (as NaN) and compute a profile *average* (not sum).
+    * Look at other videos.
+    
+### Misc
+
+Other good things to do:
+    * Compare three Fibrin MSDs, made on different samples by different people. Expected D~1.5 from MPT (mobile fraction). As of this writing, the D from PANDA (mobile fraction) is about 1.0 +/- 0.05.
+    * Add inset with MDSs from fibrin to Figure 3.
+    * Look carefully at the two water videos and the fibrin video with the interactive mapper. Make sure the mappings are good and the Gaussians are physically reasonable.
