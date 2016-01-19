@@ -127,7 +127,8 @@ def fit_profiles_recursively(profiles, lag, *, recursive=True, bound=False,
                     cg_model.set_param_hint(name, value=p.value)
 
         scaling = np.sum(profile)/np.sum(kernel)
-        result = cg_model.fit(profile, amplitude=Parameter('amplitude', value=scaling))
+        # Force the amplitude (area of the Gaussian) to be equal to the scaling.
+        result = cg_model.fit(profile, amplitude=Parameter('amplitude', value=scaling, vary=False))
         results.append(result)
     if reverse:
         results.reverse()
