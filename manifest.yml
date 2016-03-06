@@ -1,0 +1,294 @@
+# Exposure is in miliseconds.
+# Particle diameter is in microns.
+# The magnification is given as a label (e.g., 63X).
+# See Calibrations, below, a conversation table
+# giving microns per 512 pixels
+
+CFS Mucus:
+  - filename: 20140306 CFS20140304 200nm PPLGA-PEG-Rhod higher Activation_63x 1.tif
+    date: 2014-03-06
+    dilution: 10 # guessed
+    objective: 63X
+    exposure: 1570
+
+Water:
+  # Purpose: Exploratory experiments
+  #- filename: 20131126photoactivation5.tif
+  #  date: 2013-11-26
+  #  dilution: # unknown
+  #  objective: 63X
+  #  exposure: 3940
+  - filename: 20140218 Water Photoactivation/20140218_photoactivation_PLGA-PEG_rhodamine_inH2O_63x.lsm
+    date: 2014-02-18
+    dilution: # unknown
+    objective: 63X
+    exposure: 983
+  - filename: 20140218 Water Photoactivation/20140218_photoactivation_PLGA-PEG_rhodamine_inH2O_63x_2.lsm
+    date: 2014-02-18
+    dilution: # unknown
+    objective: 63X
+    exposure: 983
+  - filename: 20140218 Water Photoactivation/20140218_photoactivation_PLGA-PEG_rhodamine_inH2O_63x_3.lsm
+    date: 2014-02-18
+    dilution: # unknown
+    objective: 63X
+    exposure: 983
+  - filename: 20140313 Water Photoactivation/20140313 in H20 200nm PLGA-PEG-Rhod Activation_63x 1.lsm
+    date: 2014-03-13
+    dilution: 10
+    objective: 63X
+    exposure: 983
+  - filename: 20140313 Water Photoactivation/20140313 in H20 200nm PLGA-PEG-Rhod Activation_63x 2.lsm
+    date: 2014-03-13
+    dilution: 10
+    objective: 63X
+    exposure: 983
+  - filename: 20140401 Water Photoactivation/20140401 H20 JCK20140325 PLGA-PEG-Rhod Activation_40x 983msec 1.lsm
+    date: 2014-04-01
+    dilution: 10
+    objective: 40X
+    exposure: 983
+  - filename: 20140401 Water Photoactivation/20140401 H20 JCK20140325 PLGA-PEG-Rhod Activation_40x 983msec 2.lsm
+    date: 2014-04-01
+    dilution: 10
+    objective: 40X
+    exposure: 983
+  - filename: 20140401 Water Photoactivation/20140401 H20 JCK20140325 PLGA-PEG-Rhod Activation_40x 983msec 3.lsm
+    date: 2014-04-01
+    dilution: 10
+    objective: 40X
+    exposure: 983
+  - filename: 20140403 Water Photoactivation/20140403 H20 JCK20140325 PLGA-PEG-Rhod Activation_40x 25iterations 983msec 3.tif
+    date: 2014-04-03
+    dilution: 10
+    objective: 40X
+    exposure: 983
+  # Purpose: Probe the effect of concentration and use 40X.
+  - filename: 20140424 Water Photoactivation/20140424 H20 JCK20140422 20fold 170nm PLGA-PEG-Rhod Activation_40x 983msec 25 iterations 1.tif
+    date: 2014-04-24
+    dilution: 20
+    objective: 40X
+    exposure: 983
+  - filename: 20140424 Water Photoactivation/20140424 H20 JCK20140422 20fold 170nm PLGA-PEG-Rhod Activation_40x 983msec 25 iterations 2.tif
+    date: 2014-04-24
+    dilution: 20
+    objective: 40X
+    exposure: 983
+  - filename: 20140424 Water Photoactivation/20140424 H20 JCK20140422 50fold 170nm PLGA-PEG-Rhod Activation_40x 983msec 25 iterations 1.tif
+    date: 2014-04-24
+    dilution: 50
+    objective: 40X
+    exposure: 983
+  - filename: 20140424 Water Photoactivation/20140424 H20 JCK20140422 50fold 170nm PLGA-PEG-Rhod Activation_40x 983msec 25 iterations 2.tif
+    date: 2014-04-24
+    dilution: 50
+    objective: 40X
+    exposure: 983
+  # Purpose: Test offset and gain settings on microscope.
+  - filename: 20140513 Water Photoactivation/20140513 JCK20140506 10fold in H2O 160nm PLGA-PEG-Rhod Activation_20x 1.57sec 10 iterations 4.tif
+    date: 2014-05-13
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140513 Water Photoactivation/20140513 JCK20140506 10fold in H2O 160nm PLGA-PEG-Rhod Activation_20x 1.57sec 10 iterations 5 gain offset.tif
+    date: 2014-05-13
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140513 Water Photoactivation/20140513 JCK20140506 10fold in H2O 160nm PLGA-PEG-Rhod Activation_20x 1.57sec 10 iterations 7 gain offset _4AU.tif
+    date: 2014-05-13
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140513 Water Photoactivation/20140513 JCK20140506 10fold in H2O 160nm PLGA-PEG-Rhod Activation_20x 1.57sec 10 iterations 8 gain offset _4AU.tif
+    date: 2014-05-13
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O160nm PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations maxAU 1.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O160nm PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations maxAU 2.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O160nm PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations maxAU 3.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 1.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 10.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 11.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 2.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 3.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 4.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 5.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 6.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 7.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 8.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140519 Water Photoactivation/20140519 JCK20140506 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 9.lsm
+    date: 2014-05-19
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140523 Water Photoactivation/20140523 JCK20140519 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 1.lsm
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140523 Water Photoactivation/20140523 JCK20140519 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 2.lsm
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140523 Water Photoactivation/20140523 JCK20140519 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.57sec 20 iterations 4 AU 3.lsm
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+  - filename: 20140523 Water Photoactivation/20140523 JCK20140519 10fold in H2O PLGA-PEG-Rhod Activation_20x 1.97sec 20 iterations 4 AU scanning both directions 1.lsm
+    dilution: 10
+    objective: 20X
+    exposure: 1570
+
+Fibrin:
+  - filename: 20140520 Fibrin Photoactivation/20140520 JCK20140519 10fold in fibrin 4mg_mL PLGA-PEG-Rhod Activation_20x 3.93sec 10 iterations 4 AU 1.lsm
+    objective: 20X
+    concentration: 4 mg/ml
+    exposure: 3930
+  - filename: 20140520 Fibrin Photoactivation/20140520 JCK20140519 10fold in fibrin 4mg_mL PLGA-PEG-Rhod Activation_20x 3.93sec 10 iterations 4 AU 2.lsm
+    objective: 20X
+    concentration: 4 mg/ml
+    exposure: 3930
+  - filename: 20140520 Fibrin Photoactivation/20140520 JCK20140519 10fold in fibrin 4mg_mL PLGA-PEG-Rhod Activation_20x 3.93sec 10 iterations 4 AU 3.lsm
+    objective: 20X
+    concentration: 4 mg/ml
+    exposure: 3930
+  - filename: 20140520 Fibrin Photoactivation/20140520 JCK20140519 10fold in fibrin 4mg_mL PLGA-PEG-Rhod Activation_20x 3.93sec 10 iterations 4 AU 4.lsm
+    objective: 20X
+    concentration: 4 mg/ml
+    exposure: 3930
+  - filename: 20140401 Fibrin Photoactivation/20140401 4mg_ml fibrin JCK20140325 PLGA-PEG-Rhod Activation_40x 1.57sec 1.lsm
+    objective: 40X
+    concentration: 4 mg/ml
+    exposure: 1570
+  - filename: 20140401 Fibrin Photoactivation/20140401 4mg_ml fibrin JCK20140325 PLGA-PEG-Rhod Activation_40x 1.57sec 2.lsm
+    objective: 40X
+    concentration: 4 mg/ml
+    exposure: 1570
+  - filename: 20140401 Fibrin Photoactivation/20140401 4mg_ml fibrin JCK20140325 PLGA-PEG-Rhod Activation_40x 1.57sec 3.lsm
+    objective: 40X
+    concentration: 4 mg/ml
+    exposure: 1570
+  - filename: 20140401 Fibrin Photoactivation/20140401 4mg_ml fibrin JCK20140325 PLGA-PEG-Rhod Activation_63x 1.57sec 1.lsm
+    objective: 63X
+    concentration: 4 mg/ml
+    exposure: 1570
+
+Circular Exposure in Water:
+  - filename: 20140403 Water Photoactivation/20140403 H20 JCK20140325 PLGA-PEG-Rhod Activation_40x circle TIFF.tif
+    date: 2014-04-03
+    objective: 40X
+    exposure: 983
+
+Dried:
+  # Purpose: Look at mysteriously rising brightness after
+  #          activation laser is off.
+  #          Also, look at photobleaching over the full length.
+  - filename: 20140514 JCK20140506 160nm PLGA-PEG-Rhod Activation Dried on Coverslip _20x 1.57sec 10 iterations 1.tif
+    date: 2014-05-14
+    objective: 20X
+    exposure: 1570
+  - filename: 20140514 JCK20140506 160nm PLGA-PEG-Rhod Activation Dried on Coverslip _20x 1.57sec 25 iterations 2.tif
+    date: 2014-05-14
+    objective: 20X
+    exposure: 1570
+
+Calibrations:
+  63X: 142.86  # microns per 512 pixels
+  40X: 225.  # microns per 512 pixels
+  20X: 449.1  # microns per 512 pixels
+
+Particles:
+  2014-02-18:  # unsure about exact date
+    diameter:
+      numerical average: 151.
+      volume average: 200.
+      Z average: 187.
+      PDI: 0.125  # normally below 0.100
+  2014-03-05:
+    diameter:
+      numerical average: 145.
+      volume average: 190.
+      Z average: 190.0
+  2014-03-11:
+    diameter:
+      numerical average: 110.
+      volume average: 145.
+      Z average: 155.9
+  2014-03-25:
+    diameter:
+      numerical average: 114.
+      volume average: 153.
+      Z average: 161.5
+  2014-04-15:
+    diameter:
+      numerical average: 120.
+      volume average: 161.
+      Z average: 167.9
+  2014-04-22:
+    diameter:
+      numerical average: 122.
+      volume average: 161.
+      Z average: 170.4
+  2014-05-06:
+    diameter:
+      numerical average: 110.
+      volume average: 153.
+      Z average: 161.
+  2014-05-19:
+    diameter:
+      numerical average: 120.
+      volume average: 157.
+      Z average: 164.
